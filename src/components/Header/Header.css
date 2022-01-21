@@ -1,0 +1,9 @@
+header{
+    min-height: 80px;
+}
+header .navbar-brand{
+    color: #fff;
+}
+header .nav-link{
+    color: #fff;
+}
