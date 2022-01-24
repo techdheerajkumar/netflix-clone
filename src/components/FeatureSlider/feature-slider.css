@@ -1,0 +1,11 @@
+.feature-slider{
+    min-height: 500px;
+    background-color: #ffa55c;
+}
+
+.feature-slider .rec-arrow{
+    position: absolute;
+}
+.feature-slider .rec-slide-container{
+    margin: 0;
+}
