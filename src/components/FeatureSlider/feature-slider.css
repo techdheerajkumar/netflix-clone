@@ -1,11 +1,21 @@
 .feature-slider{
     min-height: 500px;
     background-color: #ffa55c;
+    max-height: 600px;
+    overflow: hidden;
 }
 
 .feature-slider .rec-arrow{
     position: absolute;
+    z-index: 9;
+    top: 33%;
 }
-.feature-slider .rec-slide-container{
+.feature-slider .rec-arrow.rec-arrow-left{
+    left: 100px;
+}
+.feature-slider .rec-arrow.rec-arrow-right{
+    right: 100px;
+}
+.feature-slider .rec-slider-container{
     margin: 0;
 }
