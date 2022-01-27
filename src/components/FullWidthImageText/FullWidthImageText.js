@@ -7,7 +7,7 @@ export default function FullWidthImageText() {
             <div className="fw-text-content">
                 <h1>Movie Title</h1>
                 <p>Feel Good | Time/Duration</p>
-                <a href="#" className="watch-now btn btn-danger">Watch now</a>
+                <a href="#" className="watch-now btn btn-danger">Watch nows</a>
             </div>
         </div>
     );
