@@ -4,9 +4,7 @@ import FullWidthImageText from '../FullWidthImageText/FullWidthImageText';
 import './feature-slider.css';
 
 export default function FeatureSlider() {
-    useEffect(() => {
-        console.log('Hello world');
-    }, [])
+    
 
 
     return (
