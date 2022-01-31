@@ -1,6 +1,30 @@
-.card{
-    min-height: 300px;
-    width: 245px;   
-    background: red;
-    height: 100%;
+.card {
+  height: 350px;
+  width: 300px;
+  transition: 0.3s;
+  overflow: hidden;
+  border: transparent;
+}
+
+.card-details__content {
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 9;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 14%,
+    rgba(253, 187, 45, 0) 100%
+  );
+}
+
+.card-details:hover .card-details__content {
+  opacity: 1;
+  transition: 0.3s;
+}
+.card-details .card-title {
+  text-shadow: 0 0 4px #000;
 }

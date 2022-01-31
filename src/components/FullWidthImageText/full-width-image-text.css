@@ -1,6 +1,31 @@
 .fw-image-text .rec-arrow{
     position: absolute;
+    z-index: 99;
 }
-.fw-text-content {
+
+.fw-image-text{
+    height: calc(100vh - 50px);
+}
+.fw-image-text .container{
+    z-index: 99;
+}
+
+.feature-poster{
+    object-fit: cover;
+    height: 100%;
+}
+
+.feature-poster-wrapper{
     z-index: 9;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+.fw-text-content .ds{
+    text-shadow:  0 0 4px  #000;
+}
+
+.rec-pagination{
+    position: absolute;
 }

@@ -1,7 +1,5 @@
 .feature-slider{
-    min-height: 500px;
     background-color: #ffa55c;
-    max-height: 600px;
     overflow: hidden;
 }
 
