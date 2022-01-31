@@ -1,3 +1,6 @@
 .fw-image-text .rec-arrow{
     position: absolute;
 }
+.fw-text-content {
+    z-index: 9;
+}

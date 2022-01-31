@@ -17,15 +17,14 @@ import Requests from './requests';
 
 function App() {
 
-  const [data, setData] = useState([]);
+  const [trending, setTrending] = useState([]);
 
 
 
   useEffect(() => {
     const fetchTrending = async () => {
       const res = await axios.get(`https://api.themoviedb.org/3/${Requests.fetchTrending}`)
-      // setData(data)
-      console.log(res.data.results)
+      setTrending(res.data.results)
     }
     fetchTrending();
   }, [])
@@ -34,7 +33,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Homepage />}></Route>
+        <Route path="/" element={<Homepage data={trending}/>}></Route>
         <Route path="/movies" element={<Movies />}></Route>
         <Route path="/series" element={<Series />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
