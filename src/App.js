@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Homepage from './Pages/Homepage';
@@ -10,27 +10,26 @@ import { Movies } from './Pages/Movies';
 import { Series } from './Pages/Series';
 import { Contact } from './Pages/Contact';
 import axios from 'axios';
+import Requests from './requests';
 
 
 
 
 function App() {
-  const BASE_URL = "https://api.themoviedb.org/3";
-  const api = axios.create({ baseURL: BASE_URL });
-  const api_key = "261e2dc7cdfec6c3294f3d710f103ae5";
-  const getUpcoming = api.get("movie/upcoming", {
-    params: { api_key }
-  });
+
   const [data, setData] = useState([]);
 
 
-  useEffect(()=>{
-    getUpcoming.then(response => {
-      setData(response.data.results);
-    });
-    console.log(data)
-  },[])
-  
+
+  useEffect(() => {
+    const fetchTrending = async () => {
+      const res = await axios.get(`https://api.themoviedb.org/3/${Requests.fetchTrending}`)
+      // setData(data)
+      console.log(res.data.results)
+    }
+    fetchTrending();
+  }, [])
+
   return (
     <div className="App">
       <Header />
