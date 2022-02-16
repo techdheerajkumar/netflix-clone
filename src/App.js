@@ -14,6 +14,9 @@ function App() {
 
   const [originals, setOriginals] = useState([]);
 
+  const [movies, setMovies] = useState([]);
+
+
   useEffect(() => {
     const fetchTrending = async () => {
       const res = await axios.get(
@@ -36,13 +39,25 @@ function App() {
     netflixOriginals();
   }, []);
 
+
+  useEffect(()=>{
+    const netflixMovies = async ()=>{
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/${Requests.fetchActionMovies}`
+      )
+      setMovies(response.data.results)
+    }
+
+    netflixMovies();
+  },[])
+
   return (
     <div className="App">
       <Header />
       <Routes>
         <Route
           path="/"
-          element={<Homepage data={trending} originalsData={originals} />}
+          element={<Homepage data={trending} originalsData={originals} movieData =  {movies}/>}
         ></Route>
         <Route path="/movies" element={<Movies />}></Route>
         <Route path="/series" element={<Series />}></Route>

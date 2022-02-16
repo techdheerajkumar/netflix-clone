@@ -7,6 +7,7 @@ export default function Homepage(props) {
         <>
             <FeatureSlider getData = {props.data}/>
             <CardSlider getData = {props.originalsData} title="Netflix Originals"/>
+            <CardSlider getData = {props.originalsData} title="Latest Movies"/>
         </>
     );
 }
