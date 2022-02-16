@@ -16,6 +16,8 @@ function App() {
 
   const [movies, setMovies] = useState([]);
 
+  const [actionMovies, setActionMovies] = useState([]);
+
 
   useEffect(() => {
     const fetchTrending = async () => {
@@ -33,8 +35,7 @@ function App() {
       const response = await axios.get(
         `https://api.themoviedb.org/3/${Requests.fetchNetflixOriginals}`
       );
-      setOriginals(response.data.results);
-      
+      setOriginals(response.data.results);      
     };
     netflixOriginals();
   }, []);
@@ -47,8 +48,17 @@ function App() {
       )
       setMovies(response.data.results)
     }
-
     netflixMovies();
+  },[])
+
+  useEffect(()=>{
+    const actionMovie = async ()=>{
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/${Requests.fetchActionMovies}`
+      )
+      setActionMovies(response.data.results)
+    }
+    actionMovie();
   },[])
 
   return (
@@ -57,9 +67,17 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Homepage data={trending} originalsData={originals} movieData =  {movies}/>}
+          element={<Homepage 
+            data={trending} 
+            originalsData={originals} 
+            movieData =  {movies}
+            
+            />}
         ></Route>
-        <Route path="/movies" element={<Movies />}></Route>
+        <Route path="/movies" element={<Movies
+          movieData =  {movies}
+          actionMovie = {actionMovies}
+        />}></Route>
         <Route path="/series" element={<Series />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
       </Routes>

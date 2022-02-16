@@ -1,9 +1,11 @@
 import React from 'react';
-
-export const Movies = () => {
+import FeatureSlider from '../components/FeatureSlider/FeatureSlider';
+import { CardSlider } from '../components/CardSlider/CardSlider';
+export const Movies = (props) => {
     return (
         <div>
-            <h1>Movies component</h1>
+            <FeatureSlider getData = {props.movieData}/>
+            <CardSlider getData = {props.actionMovie    } title="Action Movies"/>
         </div>
     );
 };
