@@ -4,7 +4,6 @@ import Header from "./components/Header/Header";
 import Homepage from "./Pages/Homepage";
 import { Route, Routes } from "react-router-dom";
 import { Movies } from "./Pages/Movies";
-import { Series } from "./Pages/Series";
 import { Contact } from "./Pages/Contact";
 import axios from "axios";
 import Requests from "./requests";
@@ -78,7 +77,6 @@ function App() {
           movieData =  {movies}
           actionMovie = {actionMovies}
         />}></Route>
-        <Route path="/series" element={<Series />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
       </Routes>
     </div>

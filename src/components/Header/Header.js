@@ -20,9 +20,6 @@ export default function Header() {
                                 <Link to="/movies" className="nav-link">Movies</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/series" className="nav-link">Series</Link>
-                            </li>
-                            <li className="nav-item">
                                 <Link to="/contact" className="nav-link">Contact</Link>
                             </li>
                         </ul>

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Form from '../components/Form/Form';
 import './contact.css'
 export const Contact = () => {
+    
     return (
         <div className="contact-us">
             <div className="container h-100">
